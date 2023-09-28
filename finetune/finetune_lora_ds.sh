@@ -11,7 +11,6 @@ MASTER_PORT=6001
 MODEL="/f_data/G/Qwen/Qwen-VL-Chat" #"Qwen/Qwen-VL-Chat"/"Qwen/Qwen-VL"  Set the path if you do not want to load from huggingface directly
 # ATTENTION: specify the path to your training data, which should be a json file consisting of a list of conversations.
 # See the section for finetuning in README for more information.
-DATA="path_to_data"
 
 DISTRIBUTED_ARGS="
     --nproc_per_node $GPUS_PER_NODE \
@@ -23,7 +22,6 @@ DISTRIBUTED_ARGS="
 
 torchrun $DISTRIBUTED_ARGS finetune.py \
     --model_name_or_path $MODEL \
-    --data_path $DATA \
     --bf16 True \
     --fix_vit True \
     --output_dir /f_data/G/Qwen/sft_qwen \
