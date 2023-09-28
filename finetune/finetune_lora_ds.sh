@@ -22,7 +22,6 @@ DISTRIBUTED_ARGS="
 
 torchrun $DISTRIBUTED_ARGS finetune.py \
     --model_name_or_path $MODEL \
-    --bf16 True \
     --fix_vit True \
     --output_dir /f_data/G/Qwen/sft_qwen \
     --num_train_epochs 5 \
