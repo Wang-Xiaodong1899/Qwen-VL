@@ -20,7 +20,7 @@ DISTRIBUTED_ARGS="
     --master_port $MASTER_PORT
 "
 
-torchrun $DISTRIBUTED_ARGS finetune.py \
+torchrun $DISTRIBUTED_ARGS sft.py \
     --model_name_or_path $MODEL \
     --fix_vit True \
     --output_dir /f_data/G/Qwen/sft_qwen \
