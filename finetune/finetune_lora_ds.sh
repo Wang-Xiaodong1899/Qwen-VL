@@ -26,14 +26,14 @@ torchrun $DISTRIBUTED_ARGS finetune.py \
     --data_path $DATA \
     --bf16 True \
     --fix_vit True \
-    --output_dir output_qwen \
+    --output_dir /f_data/G/Qwen/sft_qwen \
     --num_train_epochs 5 \
     --per_device_train_batch_size 2 \
     --per_device_eval_batch_size 1 \
     --gradient_accumulation_steps 8 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 1000 \
+    --save_steps 200 \
     --save_total_limit 10 \
     --learning_rate 1e-5 \
     --weight_decay 0.1 \
