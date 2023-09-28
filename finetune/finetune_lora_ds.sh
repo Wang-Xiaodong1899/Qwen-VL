@@ -25,7 +25,7 @@ torchrun $DISTRIBUTED_ARGS sft.py \
     --fix_vit True \
     --output_dir /f_data/G/Qwen/sft_qwen \
     --num_train_epochs 5 \
-    --per_device_train_batch_size 2 \
+    --per_device_train_batch_size 16 \
     --per_device_eval_batch_size 1 \
     --gradient_accumulation_steps 8 \
     --evaluation_strategy "no" \
@@ -39,7 +39,7 @@ torchrun $DISTRIBUTED_ARGS sft.py \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
     --report_to "none" \
-    --model_max_length 2048 \
+    --model_max_length 512 \
     --lazy_preprocess True \
     --use_lora \
     --gradient_checkpointing \
